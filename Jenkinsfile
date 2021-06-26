@@ -12,7 +12,7 @@ pipeline {
         }
          stage('Creating new console and running dotnet app'){ 
                steps {
-                   // sh 'sudo dotnet new console'
+                    sh 'sudo dotnet new console'
                     sh 'sudo dotnet run'
              }
         }
