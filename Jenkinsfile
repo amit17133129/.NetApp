@@ -7,7 +7,7 @@ pipeline {
                     sh 'sudo yum install dotnet-sdk-5.0 -y'
                     sh 'sudo yum install aspnetcore-runtime-5.0 -y'
 
-           
+   
                 }
         }
          stage('Creating new console and running dotnet app'){ 
