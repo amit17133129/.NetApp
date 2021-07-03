@@ -1,20 +1,11 @@
 pipeline {
-    agent any
-      stages {
-          stage('configuring dotnet repo and installing dotnet'){
-                steps {
-                  //  sh 'sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm' 
-                    sh 'sudo yum install dotnet-sdk-5.0 -y'
-                    sh 'sudo yum install aspnetcore-runtime-5.0 -y'
-
-   
-                }
-        }
-         stage('Creating new console and running dotnet app'){ 
-               steps {
-                    sh 'sudo dotnet new console'
-                    sh 'sudo dotnet run'
-             }
-        }
+ agent any;
+  stages {
+    stage('Build') {
+      steps {
+        bat "dotnet run --project  C:/Users/Administrator/source/repos/WebApplication1/WebApplication1"
+        bat "\"${MSBUILD}\" C:/Users/Administrator/source/repos/WebApplication1/WebApplication1.sln /p:Configuration=${env.CONFIG};Platform=${env.PLATFORM} /maxcpucount:%NUMBER_OF_PROCESSORS% /nodeReuse:false"
+      }
     }
+  }
 }
