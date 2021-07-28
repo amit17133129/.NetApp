@@ -2,8 +2,8 @@ pipeline {
  agent any;
  environment {
     MSBUILD = "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild"
-   CONFIG = 'MSBuild.exe'
-   PLATFORM = 'WebApplication4-7.sln'
+ //  CONFIG = 'MSBuild.exe'
+ //  PLATFORM = 'WebApplication4-7.sln'
   }
   stages {
     stage('Build') {
