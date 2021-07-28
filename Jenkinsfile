@@ -1,21 +1,26 @@
 pipeline {
  agent any;
+ environment {
+    MSBUILD = "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild"
+ 
+     
+  }
   stages {
     stage('Build') {
       steps {
-        bat "dotnet run --project  C:/Users/Administrator/source/repos/WebApplication1/WebApplication1"
-        bat "\"${MSBUILD}\" C:/Users/Administrator/source/repos/WebApplication1/WebApplication1.sln /p:Configuration=${env.CONFIG};Platform=${env.PLATFORM} /maxcpucount:%NUMBER_OF_PROCESSORS% /nodeReuse:false"
+    
+        bat "\"${MSBUILD}\" C:/Users/Administrator/source/repos/WebApplication4-7/WebApplication4-7"
+      
       }
     }
   }
- 
- post {  
+   post {  
              
          success {  
-           mail bcc: '', body: 'Hey, your job has ran successfully keep innovating.', cc: '', from: '', replyTo: '', subject: 'Job Succeeded from multi branch', to: 'amitsharma13317@gmail.com'  
+           mail bcc: '', body: 'Hey, .Net Application run successfully.', cc: '', from: '', replyTo: '', subject: 'Job Succeeded', to: 'amitsharma13317@gmail.com'  
          }  
          failure {  
-             mail bcc: '', body: 'Hey, your job has failed. When you will up. Report to the office.', cc: '', from: '', replyTo: 'Job Failed from multi branch Need to Up', subject: '', to: 'amitsharma13317@gmail.com'
+             mail bcc: '', body: 'Hey, .Net Application Failed', cc: '', from: '', replyTo: 'Job Failed', subject: '', to: 'amitsharma13317@gmail.com'
          }  
  }
 }
