@@ -4,7 +4,7 @@ pipeline {
     MSBUILD = "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild"
     CONFIG = 'Test'
     PLATFORM = 'AnyCPU'
-    OutputPath = 'C:\Output\bin\'
+    OutputPath = 'C:/Output/bin/'
      
   }
   stages {
