@@ -2,16 +2,17 @@ pipeline {
  agent any;
  environment {
     MSBUILD = "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild"
-    CONFIG = 'Test'
-    PLATFORM = 'AnyCPU'
-    OutputPath = 'C:/Output/bin/'
+ //   CONFIG = 'Test'
+ //   PLATFORM = 'AnyCPU'
+ //   OutputPath = 'C:/Output/bin/'
      
   }
   stages {
     stage('Build') {
       steps {
     //    bat "dotnet run --project  C:/Users/Administrator/source/repos/WebApplication1/WebApplication1"
-        bat "\"${MSBUILD}\" C:/Users/Administrator/source/repos/WebApplication4-7/WebApplication4-7 /p:Configuration=${env.CONFIG}   /p:DCC_ExeOutput=${env.OutputPath}; Platform=${env.PLATFORM} /maxcpucount:%NUMBER_OF_PROCESSORS% /nodeReuse:false"
+        bat "\"${MSBUILD}\" C:/Users/Administrator/source/repos/WebApplication4-7/WebApplication4-7"
+       ///p:Configuration=${env.CONFIG}   /p:DCC_ExeOutput=${env.OutputPath}; Platform=${env.PLATFORM} /maxcpucount:%NUMBER_OF_PROCESSORS% /nodeReuse:false
       }
     }
   }
