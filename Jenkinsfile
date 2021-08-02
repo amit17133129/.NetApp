@@ -17,7 +17,7 @@ pipeline {
    post {  
              
          success {  
-           mail bcc: '', body: '', cc: '', from: '', replyTo: '', subject: 'Job Succeeded', to: 'amitsharma13317@gmail.com'  
+           mail bcc: '', body: 'Hey, .Net Applicationb sun successfully', cc: '', from: '', replyTo: '', subject: 'Job Succeeded', to: 'amitsharma13317@gmail.com'  
          }  
          failure {  
              mail bcc: '', body: 'Hey, .Net Application Failed', cc: '', from: '', replyTo: 'Job Failed', subject: '', to: 'amitsharma13317@gmail.com'
